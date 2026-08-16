@@ -117,7 +117,7 @@ if __name__ == '__main__':
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     save_data =None
     for i in range(200):
-        dynamic_beta=0.3 if labels[i] ==1 else 0.2
+        dynamic_beta=0.3 if labels[i] ==0 else 0.2
         diffusion = Diffusion(time_steps=500)
         out = diffusion.forward(x_0[i:i+1], dynamic_beta)
         
